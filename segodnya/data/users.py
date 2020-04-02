@@ -16,11 +16,10 @@ class Jobs(SqlAlchemyBase):
     start_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)
     end_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)
     is_finished = sqlalchemy.Column(sqlalchemy.Boolean, default=True)
-
-    jobs = orm.relation("Jobs")
+    user = orm.relation('User')
 
     def __repr__(self):
-        return f'<Job> {self.job}'
+        return f'<Jobs> {self.job}'
 
 
 class User(SqlAlchemyBase):
@@ -37,7 +36,5 @@ class User(SqlAlchemyBase):
     hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     modifed_date = sqlalchemy.Column(sqlalchemy.DateTime, default=datetime.datetime.now)
 
-    user = orm.relation("User")
-
     def __repr__(self):
-        return f'<Jobs> {self.job}'
+        return f'<User> {self.name}'

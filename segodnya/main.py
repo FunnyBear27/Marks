@@ -8,23 +8,16 @@ app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 
 def main():
-    db_session.global_init("/mars_explorer.sqlite")
+    db_session.global_init("db/mars_explorer.sqlite")
     app.run()
 
 
 @app.route('/')
 def index():
     session = db_session.create_session()
-    job = session.query(users.Jobs)
+    jobs = session.query(users.Jobs).all()
 
-    dict = {}
-    dict['title of activity'] = job.job
-    dict['name'] = job.team_leader
-    dict['duration'] = job.work_size
-    dict['list of collaborators'] = job.collaborators
-    dict['is finished'] = job.is_finished
-
-    return render_template('extend.html', **dict)
+    return render_template('extend.html', jobs=jobs)
 
 
 if __name__ == '__main__':
