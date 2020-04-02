@@ -1,0 +1,24 @@
+table {
+    border-collapse: collapse;
+    width: 70%;
+    text-align: center;
+}
+th, td {
+    border: 1px solid #afafaf;
+    height: 75px;
+}
+th {
+    background: #afafaf;
+}
+td {
+    background: #bbb8eb;
+}
+.grey {
+    color: #bfbdbe;
+}
+.pink {
+    background: #faaabb;
+}
+body {
+    align-items: center;
+}

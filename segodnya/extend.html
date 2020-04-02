@@ -1,0 +1,18 @@
+{% extends "index.html" %} {% block content %}
+<table align="center">
+    <tr>
+        <th>Title of activity</th>
+        <th>Team leader</th>
+        <th>Duration</th>
+        <th>List of collaborators</th>
+        <th>Is finished</th>
+    </tr>
+    <tr>
+        <td>{{ title of activity }}</td>
+        <td>{{ name }}</td>
+        <td>{{ duration }}</td>
+        <td>{{ list of collaborators }}</td>
+        <td class="pink">{{ is finished }}</td>
+    </tr>
+</table>
+{% endblock %}
